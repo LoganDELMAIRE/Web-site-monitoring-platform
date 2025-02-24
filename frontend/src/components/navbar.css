@@ -1,0 +1,159 @@
+.main-nav {
+  background-color: white;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0.75rem 1rem;
+  position: fixed;
+  width: 100%;
+  height: var(--navbar-height);
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+
+.nav-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.brand-icon {
+  height: 3rem;
+  width: 3rem;
+  color: #3498db;
+}
+
+.brand-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #3498db;
+}
+
+.nav-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-items {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-item, .nav-logout {
+  font-weight: 500;
+  padding: 0.25rem 0;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  font-size: inherit;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.nav-item {
+  color: #4b5563;
+}
+
+.nav-logout {
+  border: none;
+  background: none;
+  color: #ef4444;
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  color: #1f2937;
+  border-bottom-color: #e5e7eb;
+}
+
+.nav-logout:hover {
+  color: #dc2626;
+}
+
+.nav-item.active {
+  color: #3498db;
+  border-bottom-color: #3498db;
+}
+
+/* Menu hamburger */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-right: 1rem;
+}
+
+/* Styles mobile */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-content {
+    display: none;
+    position: fixed;
+    top: 4rem;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .nav-content.open {
+    display: flex;
+  }
+
+  .nav-items {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .nav-item, .nav-logout {
+    font-size: 1.25rem;
+    padding: 0.5rem 0;
+  }
+
+  /* Animation du hamburger */
+  .menu-toggle[aria-expanded="true"] .hamburger {
+    background: transparent;
+  }
+
+  .menu-toggle[aria-expanded="true"] .hamburger::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+
+  .menu-toggle[aria-expanded="true"] .hamburger::after {
+    transform: rotate(-45deg);
+    bottom: 0;
+  }
+
+  .brand-text {
+    font-size: 1rem;
+  }
+
+  .brand-icon {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+}
+
+/* Ajustements pour très petits écrans */
+@media (max-width: 380px) {
+  .brand-text {
+    display: none;
+  }
+}

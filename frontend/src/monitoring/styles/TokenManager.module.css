@@ -1,0 +1,253 @@
+@import './variables.css';
+.token_manager { 
+  background: var(--bg-primary);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--card-shadow);
+  margin-bottom: var(--spacing-lg);
+}
+
+.token_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.token_header h2 {
+  margin: 0;
+  color: var(--text_primary);
+}
+
+.generate_btn {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  border: none;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.generate_btn:hover {
+  background-color: var(--success-color);
+}
+
+.generate_btn:disabled {
+  background-color: var(--text-secondary);
+  cursor: not-allowed;
+}
+
+.token_field {
+  margin-bottom: var(--spacing-lg);
+}
+
+.token_field label {
+  display: block;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.token_value {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-secondary);
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--border-color);
+}
+
+.token_value code {
+  flex: 1;
+  font-family: monospace;
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.visibility_btn,
+.copy_btn {
+  background: none;
+  border: none;
+  font-size: var(--font-size-xl);  
+  cursor: pointer;
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius-md);
+  transition: background-color 0.2s;
+}
+
+.visibility_btn:hover,
+.copy_btn:hover {
+  background-color: var(--bg-secondary);
+}
+
+.visibility_btn:disabled,
+.copy_btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.error_message {
+  color: var(--danger-color);
+  padding: var(--spacing-sm);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.token_info {
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background-color: var(--bg-secondary);
+  border-radius: var(--border-radius-md);
+}
+
+.token_info h3 {
+  color: var(--text-primary);
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-md);
+}
+
+.token_info ol {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: step-counter;
+}
+
+.token_info ol > li {
+  margin-bottom: var(--spacing-xl);
+  counter-increment: step-counter;
+}
+
+.token_info ol > li::before {
+  content: counter(step-counter);
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  font-weight: bold;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: var(--spacing-sm);
+}
+
+.token_info ul {
+  list-style-type: none;
+  padding-left: var(--spacing-xl);
+  margin: var(--spacing-sm) 0;
+}
+
+.token_info ul li {
+  margin: var(--spacing-sm) 0;
+  position: relative;
+}
+
+.token_info ul li::before {
+  color: var(--primary-color);
+  font-weight: bold;
+  position: absolute;
+  left: -1em;
+}
+
+.token_info pre {
+  background: var(--bg-primary);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-sm);
+  overflow-x: auto;
+  margin: var(--spacing-sm) 0;
+  font-family: monospace;
+  font-size: var(--font-size-sm);
+  border: 1px solid var(--border-color);
+}
+
+.token_info code {
+  background: var(--bg-primary);
+  padding: 0.2em 0.4em;
+  border-radius: var(--border-radius-sm);
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+.token_info strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.token_info_note {
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background-color: var(--bg-primary);
+  border-left: 4px solid var(--primary-color);
+  border-radius: var(--border-radius-sm);
+}
+
+.token_manager.loading {
+  text-align: center;
+  padding: var(--spacing-2xl);
+  color: var(--text-secondary);
+}
+
+.message {
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--spacing-lg);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.message.error {
+  color: var(--danger-color);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.message.success {
+  color: var(--success-color);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .token_manager {
+    padding: var(--spacing-md);
+  }
+
+  .token_header {
+    flex-direction: column;
+    gap: var(--border-radius-md);
+    text-align: center;
+  }
+
+  .token_value {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .token_value code {
+    word-break: break-all;
+  }
+
+  .button_group {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+  }
+} 

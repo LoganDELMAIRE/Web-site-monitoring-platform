@@ -1,0 +1,122 @@
+@import './variables.css';
+@import './common.css';
+
+.add_site_page {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: var(--navbar-height) var(--spacing-xl) var(--spacing-xl);
+}
+
+.add_site_container {
+  background: var(--bg-primary);
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+
+.add_site_form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.form_group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.form_label {
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: var(--font-size-md);
+}
+
+.form_input {
+  padding: var(--spacing-md);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-md);
+  transition: all var(--transition-fast);
+}
+
+.form_input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.1);
+}
+
+textarea.form_input {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.error_message {
+  padding: var(--spacing-md);
+  background-color: #fef2f2;
+  border: 1px solid #fee2e2;
+  border-radius: var(--border-radius-md);
+  color: var(--danger-color);
+  font-size: var(--font-size-sm);
+}
+
+.form_actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+.form_actions button {
+  padding: var(--spacing-sm) var(--spacing-xl);
+  font-size: var(--font-size-md);
+  font-weight: 500;
+  color: var(--text-light);
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.form_actions button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.token_section {
+  background: var(--bg-primary);
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--spacing-xl);
+}
+
+.token_section h2 {
+  color: var(--text-primary);
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-md);
+}
+
+.token_section p {
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-lg);
+}
+
+@media (max-width: 768px) {
+  .add_site_page {
+    padding: var(--spacing-md);
+  }
+
+  .add_site_container {
+    padding: var(--spacing-lg);
+  }
+
+  .form_actions {
+    flex-direction: column-reverse;
+  }
+
+  .form_actions button {
+    width: 100%;
+  }
+} 
